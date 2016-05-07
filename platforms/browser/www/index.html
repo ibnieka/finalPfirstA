@@ -48,27 +48,29 @@
 
       <br />
       <p id="filler">
-        <h1>Entries</h1>
+        <h1 onclick="seeE()">Entries</h1>
         <br />
         <h2 id="slug">Entry 1</h2>
         <h4 id="body">Body of entry one.</h4>
         <br />
-        <button type="button">Delete</button>
+        <button type="button" onclick="delete()">Delete</button>
       </p>
 
       <script>
       function entries() {
-        var
-        <h1>Entries</h1>
-        <br />
-        <h2 id="slug">Entry 1</h2>
-        <h4 id="body">Body of entry one.</h4>
-        <br />
-        <button type="button">Delete</button>
+        var entry = document.getElementById("filler");
+        entry.innerHTML =
+        '<h1>Entries</h1>' +
+        '<br />' +
+        '<h2 href id="slug">Entry 1</h2>' +
+        '<h4 id="body">Body of entry one.</h4>' +
+        '<br />' +
+        '<button type="button">Delete</button>';
+        document.getElementById("filler").innerHTML = entry;
       }
 
       function newE() {
-        var createE document.getElementById("filler");
+        var createE = document.getElementById("filler");
         createE.innerHTML = '<form action="/entries/" method="POST">' +
           '<label name="slug">' + 'Title' + '</label>' +
           '<input type="text" name="slug">' + '<br />' +
@@ -76,6 +78,15 @@
           '<input type="text" name="body">' + '<br />' +
           '<input type="submit">' + '</form>';
           document,getElementByID("filler").innerHtml = createE;
+      }
+
+      function seeE() {
+        var see = document.getElementById("filler");
+        see.innerHTML = "Enrty";
+      }
+
+      function delete() {
+        document.getElementById("filler").innerHtml = "";
       }
       </script>
     </body>
